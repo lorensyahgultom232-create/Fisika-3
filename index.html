@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografis Gelombang Elektromagnetik</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,800;0,900;1,800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* =========================================
+           1. RESET & VARIABEL
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #070b19;
+            --bg-blue: #102b5e;
+            --text-dark: #1a1a1a;
+            --blue-box: #e8f0fe;
+            --blue-border: #a4c2f4;
+            --yellow: #ffd700;
+            --yellow-dark: #e6b800;
+            --white: #ffffff;
+            --font-title: 'Montserrat', sans-serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #111;
+            font-family: var(--font-body);
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            color: var(--text-dark);
+        }
+
+        /* =========================================
+           2. KONTAINER UTAMA
+           ========================================= */
+        .infographic-container {
+            width: 100%;
+            max-width: 1000px;
+            background: radial-gradient(circle at top right, #1a3c70, var(--bg-dark));
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid #2a4b7c;
+        }
+
+        /* Efek Bintang Latar Belakang */
+        .stars {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #fff, transparent),
+                radial-gradient(1px 1px at 40px 70px, #fff, transparent),
+                radial-gradient(2px 2px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 160px 120px, #fff, transparent),
+                radial-gradient(1px 1px at 300px 200px, #fff, transparent);
+            background-size: 300px 300px;
+            opacity: 0.6;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        /* =========================================
+           3. HEADER & JUDUL UTAMA
+           ========================================= */
+        .header {
+            text-align: center;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .logo-kiri {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: var(--white);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-kiri i {
+            font-size: 30px;
+        }
+
+        .logo-kiri span {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.1;
+            display: block;
+        }
+
+        .judul-utama {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .judul-utama h1 {
+            font-family: var(--font-title);
+            font-size: 55px;
+            font-weight: 900;
+            color: var(--white);
+            text-shadow: 0 0 10px rgba(255,255,255,0.5), 3px 3px 0 #000;
+            line-height: 1;
+            letter-spacing: 2px;
+        }
+
+        .judul-utama .highlight {
+            background: linear-gradient(to right, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 45px;
+            font-weight: 900;
+            text-shadow: none;
+            filter: drop-shadow(2px 2px 0px #000);
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            background: var(--white);
+            color: var(--bg-blue);
+            padding: 8px 30px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 10px;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* =========================================
+           4. BAGIAN ATAS (2 KOTAK)
+           ========================================= */
+        .top-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .card-box {
+            background: var(--blue-box);
+            border: 3px solid var(--blue-border);
+            border-radius: 15px;
+            padding: 15px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .card-title {
+            background: #2d3e71;
+            color: var(--white);
+            font-weight: 700;
+            padding: 8px 15px;
+            border-radius: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            position: absolute;
+            top: -15px;
+            left: 15px;
+            font-size: 14px;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+        }
+
+        .card-title.pink { background: #8b005d; }
+        .card-title.blue { background: #1a4a8d; }
+
+        .card-content {
+            margin-top: 20px;
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--text-dark);
+        }
+
+        /* Ilustrasi Gelombang 2D di dalam kotak kiri */
+        .wave-illustration {
+            width: 100%;
+            height: 100px;
+            margin: 10px 0;
+            position: relative;
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .axis-x, .axis-y {
+            position: absolute;
+            background: #000;
+        }
+        .axis-x { width: 80%; height: 2px; left: 10%; }
+        .axis-y { height: 80%; width: 2px; top: 10%; }
+
+        /* SVG untuk kurva sinusoidal */
+        .wave-svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* List Sifat-Sifat */
+        .list-sifat {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .list-sifat li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .list-sifat li i {
+            color: #1a4a8d;
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .formula-box {
+            background: #fff3cd;
+            border: 1px solid #ffe69c;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        /* =========================================
+           5. BAGIAN SPEKTRUM (TENGAH)
+           ========================================= */
+        .spectrum-box {
+            background: #eef3fc;
+            border-radius: 15px;
+            border: 3px solid #b0c4de;
+            padding: 15px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .spectrum-title {
+            background: linear-gradient(to right, #2d3e71, #1a4a8d);
+            color: var(--white);
+            font-family: var(--font-title);
+            font-weight: 900;
+            font-size: 20px;
+            text-align: center;
+            padding: 10px;
+            border-radius: 25px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 0 #0b1a3a;
+            border: 2px solid #fff;
+        }
+
+        /* Gelombang Warna di atas spektrum */
+        .rainbow-wave-bar {
+            height: 30px;
+            background: linear-gradient(to right, 
+                #0000ff, #00ffff, #00ff00, #ffff00, #ff8c00, #ff0000, #8b00ff);
+            border-radius: 5px;
+            margin-bottom: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .rainbow-wave-bar::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15 Q 10 0, 20 15 T 40 15' fill='none' stroke='rgba(255,255,255,0.8)' stroke-width='2'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+        }
+
+        /* Tabel Spektrum */
+        .spectrum-table {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+
+        .spec-col {
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .spec-header {
+            color: var(--white);
+            text-align: center;
+            font-weight: 700;
+            font-size: 12px;
+            padding: 8px 4px;
+            min-height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Warna Header Spektrum */
+        .col-radio .spec-header { background: #0033cc; }
+        .col-mikro .spec-header { background: #0066cc; }
+        .col-infra .spec-header { background: #0099cc; }
+        .col-cahaya .spec-header { background: #00b359; }
+        .col-uv .spec-header { background: #ff8c00; }
+        .col-xray .spec-header { background: #cc0000; }
+        .col-gamma .spec-header { background: #6600cc; }
+
+        .spec-body {
+            background: #fff;
+            text-align: center;
+            padding: 10px 5px;
+            font-size: 11px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .spec-body i {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .spec-data {
+            font-family: monospace;
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 1.4;
+            color: #000;
+        }
+
+        /* Panah Bawah Spektrum */
+        .spectrum-arrow-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding: 0 10px;
+        }
+        
+        .arrow-text {
+            font-size: 11px;
+            font-weight: 600;
+            text-align: center;
+            width: 35%;
+        }
+
+        .arrow-center {
+            background: #1a4a8d;
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 700;
+            text-align: center;
+            align-self: center;
+        }
+
+        .arrow-line-left {
+            border-bottom: 3px solid #cc0000;
+            position: relative;
+        }
+        .arrow-line-left::before {
+            content: '';
+            position: absolute;
+            left: 0; bottom: -7px;
+            border-width: 6px 10px 6px 0;
+            border-style: solid;
+            border-color: transparent #cc0000 transparent transparent;
+        }
+
+        .arrow-line-right {
+            border-bottom: 3px solid #6600cc;
+            position: relative;
+        }
+        .arrow-line-right::after {
+            content: '';
+            position: absolute;
+            right: 0; bottom: -7px;
+            border-width: 6px 0 6px 10px;
+            border-style: solid;
+            border-color: transparent transparent transparent #6600cc;
+        }
+
+        /* =========================================
+           6. BAGIAN BAWAH (CONTOH PEMANFAATAN)
+           ========================================= */
+        .bottom-section {
+            background: #eef3fc;
+            border-radius: 15px;
+            border: 3px solid #b0c4de;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .bottom-title {
+            background: #2d3e71;
+            color: var(--white);
+            font-weight: 700;
+            padding: 8px 20px;
+            border-radius: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+        }
+
+        .pemanfaatan-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .pemanfaatan-item {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 15px 5px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #d1d9e6;
+        }
+
+        .icon-box {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #1a4a8d;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pemanfaatan-item p {
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: #333;
+        }
+
+        /* =========================================
+           7. FOOTER (TUJUAN & KESIMPULAN)
+           ========================================= */
+        .footer-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+        }
+
+        .tujuan-box {
+            background: #fffbe6;
+            border: 3px dashed #d4a373;
+            border-radius: 15px;
+            padding: 15px;
+            position: relative;
+        }
+
+        .tujuan-title {
+            background: #ffd700;
+            color: #333;
+            font-weight: 800;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            position: absolute;
+            top: -15px;
+            left: 15px;
+            font-size: 14px;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+        }
+
+        .tujuan-list {
+            margin-top: 20px;
+            list-style: none;
+        }
+
+        .tujuan-list li {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #333;
+        }
+
+        .tujuan-list li i {
+            color: #1a4a8d;
+            margin-top: 2px;
+        }
+
+        .kesimpulan-box {
+            background: #ffd700;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 3px solid #e6b800;
+        }
+
+        .kesimpulan-box i {
+            position: absolute;
+            top: -15px;
+            right: -10px;
+            font-size: 30px;
+            color: #fff;
+            text-shadow: 0 0 10px #ffca28;
+        }
+
+        .kesimpulan-box p {
+            font-weight: 800;
+            font-size: 14px;
+            color: #1a1a1a;
+            line-height: 1.4;
+        }
+
+        /* =========================================
+           8. RESPONSIVE
+           ========================================= */
+        @media (max-width: 850px) {
+            .top-section { grid-template-columns: 1fr; }
+            .footer-section { grid-template-columns: 1fr; }
+            .spectrum-table { grid-template-columns: repeat(4, 1fr); }
+            .pemanfaatan-grid { grid-template-columns: repeat(4, 1fr); }
+            .judul-utama h1 { font-size: 40px; }
+            .judul-utama .highlight { font-size: 32px; }
+        }
+
+        @media (max-width: 500px) {
+            .spectrum-table { grid-template-columns: repeat(2, 1fr); }
+            .pemanfaatan-grid { grid-template-columns: repeat(2, 1fr); }
+            .logo-kiri span { font-size: 10px; }
+            .subtitle { font-size: 11px; padding: 5px 15px;}
+            .arrow-text { width: 45%; font-size: 9px; }
+            .arrow-center { font-size: 9px; padding: 4px 8px;}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="infographic-container">
+        <div class="stars"></div>
+        
+        <div class="content-wrapper">
+            <!-- HEADER -->
+            <div class="header">
+                <div class="logo-kiri">
+                    <i class="fa-solid fa-atom"></i>
+                    <span>Pembelajaran<br>Fisika</span>
+                </div>
+                <div class="judul-utama">
+                    <h1>GELOMBANG</h1>
+                    <span class="highlight">ELEKTROMAGNETIK</span>
+                    <div class="subtitle">Mengenal Spektrum, Sifat, dan Pemanfaatannya dalam Kehidupan Sehari-hari</div>
+                </div>
+            </div>
+
+            <!-- BAGIAN ATAS (2 KOTAK) -->
+            <div class="top-section">
+                <!-- Kotak Kiri: Apa itu -->
+                <div class="card-box">
+                    <div class="card-title pink">
+                        <i class="fa-solid fa-question"></i> Apa itu Gelombang Elektromagnetik?
+                    </div>
+                    <div class="card-content">
+                        Gelombang yang berupa perambatan medan listrik dan medan magnet yang saling tegak lurus serta dapat merambat tanpa memerlukan medium (ruang hampa).
+                        
+                        <!-- Ilustrasi Gelombang -->
+                        <div class="wave-illustration">
+                            <svg class="wave-svg" viewBox="0 0 200 100" preserveAspectRatio="none">
+                                <!-- Sumbu X dan Y -->
+                                <line x1="20" y1="50" x2="180" y2="50" stroke="black" stroke-width="2" />
+                                <line x1="100" y1="10" x2="100" y2="90" stroke="black" stroke-width="2" />
+                                
+                                <!-- Gelombang Listrik (Merah) - Vertikal -->
+                                <path d="M 20 50 Q 60 10, 100 50 T 180 50" fill="none" stroke="red" stroke-width="2" />
+                                <!-- Gelombang Magnet (Biru) - Horizontal (Diilustrasikan miring) -->
+                                <path d="M 20 80 Q 60 40, 100 80 T 180 80" fill="none" stroke="#00d2ff" stroke-width="2" />
+                                
+                                <!-- Label -->
+                                <text x="70" y="25" fill="red" font-size="10" font-weight="bold">Medan Listrik (E)</text>
+                                <text x="30" y="95" fill="#0055ff" font-size="10" font-weight="bold">Medan Magnet (B)</text>
+                                <text x="155" y="40" fill="black" font-size="10">Arah</text>
+                                <text x="150" y="50" fill="black" font-size="10">Rambat</text>
+                            </svg>
+                        </div>
+                        <div style="text-align: center; font-size: 11px; font-weight: bold; margin-bottom: 5px;">
+                            E &perp; B &perp; arah rambat
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kotak Kanan: Sifat-Sifat -->
+                <div class="card-box">
+                    <div class="card-title blue">
+                        <i class="fa-solid fa-clipboard-check"></i> Sifat-Sifat Utama
+                    </div>
+                    <ul class="list-sifat">
+                        <li><i class="fa-solid fa-circle-check"></i> Dapat merambat di ruang hampa.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Merupakan gelombang transversal.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Kelajuan di vakum: c = 3 &times; 10&sup8; m/s.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Memenuhi hubungan: <div class="formula-box">c = &lambda; &middot; f</div></li>
+                        <li><i class="fa-solid fa-circle-check"></i> Membawa energi.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BAGIAN SPEKTRUM (TENGAH) -->
+            <div class="spectrum-box">
+                <div class="spectrum-title">Spektrum Gelombang Elektromagnetik</div>
+                
+                <div class="rainbow-wave-bar"></div>
+
+                <div class="spectrum-table">
+                    <!-- Radio -->
+                    <div class="spec-col col-radio">
+                        <div class="spec-header">Gelombang<br>Radio</div>
+                        <div class="spec-body">
+                            <i class="fa-solid fa-radio"></i>
+                            <div class="spec-data">
+                                f &lt; 10&sup8; Hz<br>
+                                &lambda; &gt; 3 m
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mikro -->
+                    <div class="spec-col col-mikro">
+                        <div class="spec-header">Gelombang<br>Mikro</div>
+                        <div class="spec-body">
+                            <i class="fa-solid fa-microwave"></i>
+                            <div class="spec-data">
+                                10&sup8; &ndash; 10&sup1;&sup1; Hz<br>
+                                3 m &ndash; 1 mm
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Inframerah -->
+                    <div class="spec-col col-infra">
+                        <div class="spec-header">Inframerah<br>(IR)</div>
+                        <div class="spec-body">
+                            <i class="fa-solid fa-temperature-half"></i>
+                            <div class="spec-data">
+                                10&sup1;&sup1; &ndash; 4&times;10&sup1;&#8308; Hz<br>
+                                1 mm &ndash; 760 nm
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cahaya Tampak -->
+                    <div class="spec-col col-cahaya">
+                        <div class="spec-header">Cahaya<br>Tampak</div>
+                        <div class="spec-body">
+                            <i class="fa-solid fa-sun"></i>
+                            <div class="spec-data">
+                                4&times;10&sup1;&#8308; &ndash; 7,5&times;10&sup1;&#8308; Hz<br>
+                                760 &ndash; 400 nm
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ultraviolet -->
+                    <div class="spec-col col-uv">
+                        <div class="spec-header">Ultraviolet<br>(UV)</div>
+                        <div class="spec-body">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <div class="spec-data">
+                                7,5&times;10&sup1;&#8308; &ndash; 10&sup1;&#8310; Hz<br>
+                                400 &ndash; 10 nm
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sinar-X -->
+                    <div class="spec-col col-xray">
+                        <div class="spec-header">Sinar-X</div>
+                        <div class="spec-body">
+                            <i class="fa-solid fa-x-ray"></i>
+                            <div class="spec-data">
+                                10&sup1;&#8310; &ndash; 10&sup1;&#8313; Hz<br>
+                                10 &ndash; 0,01 nm
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sinar Gamma -->
+                    <div class="spec-col col-gamma">
+                        <div class="spec-header">Sinar<br>Gamma (&gamma;)</div>
+                        <div class="spec-body">
+                            <i class="fa-solid fa-radiation"></i>
+                            <div class="spec-data">
+                                f &gt; 10&sup1;&#8313; Hz<br>
+                                &lambda; &lt; 0,01 nm
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panah Skala -->
+                <div class="spectrum-arrow-container">
+                    <div class="arrow-line-left">
+                        <div class="arrow-text">
+                            Frekuensi semakin rendah<br>
+                            Panjang gelombang semakin besar<br>
+                            Energi semakin kecil
+                        </div>
+                    </div>
+                    <div class="arrow-center">
+                        Arah Perubahan<br>pada Spektrum
+                    </div>
+                    <div class="arrow-line-right">
+                        <div class="arrow-text">
+                            Frekuensi semakin tinggi<br>
+                            Panjang gelombang semakin kecil<br>
+                            Energi semakin besar
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BAGIAN BAWAH (CONTOH PEMANFAATAN) -->
+            <div class="bottom-section">
+                <div class="bottom-title">
+                    <i class="fa-solid fa-gear"></i> Contoh Pemanfaatan
+                </div>
+                
+                <div class="pemanfaatan-grid">
+                    <div class="pemanfaatan-item">
+                        <div class="icon-box"><i class="fa-solid fa-tower-broadcast"></i></div>
+                        <p>Radio & TV<br>(komunikasi)</p>
+                    </div>
+                    <div class="pemanfaatan-item">
+                        <div class="icon-box"><i class="fa-solid fa-microwave"></i></div>
+                        <p>Oven mikro<br>(memanaskan makanan)</p>
+                    </div>
+                    <div class="pemanfaatan-item">
+                        <div class="icon-box"><i class="fa-solid fa-tv"></i></div>
+                        <p>Inframerah<br>(remote TV, sensor)</p>
+                    </div>
+                    <div class="pemanfaatan-item">
+                        <div class="icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+                        <p>Cahaya tampak<br>(penerangan, penglihatan)</p>
+                    </div>
+                    <div class="pemanfaatan-item">
+                        <div class="icon-box"><i class="fa-solid fa-sun"></i></div>
+                        <p>Ultraviolet<br>(sterilisasi, tabung UV, tabir surya)</p>
+                    </div>
+                    <div class="pemanfaatan-item">
+                        <div class="icon-box"><i class="fa-solid fa-x-ray"></i></div>
+                        <p>Sinar-X<br>(rontgen medis)</p>
+                    </div>
+                    <div class="pemanfaatan-item">
+                        <div class="icon-box"><i class="fa-solid fa-radiation"></i></div>
+                        <p>Sinar Gamma<br>(terapi kanker, sterilisasi alat medis)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER (TUJUAN & KESIMPULAN) -->
+            <div class="footer-section">
+                <div class="tujuan-box">
+                    <div class="tujuan-title">
+                        <i class="fa-solid fa-bullseye"></i> Tujuan Pembelajaran:
+                    </div>
+                    <ul class="tujuan-list">
+                        <li><i class="fa-solid fa-check"></i> Mengidentifikasi spektrum gelombang elektromagnetik.</li>
+                        <li><i class="fa-solid fa-check"></i> Menjelaskan hubungan frekuensi, panjang gelombang, dan energi.</li>
+                        <li><i class="fa-solid fa-check"></i> Menganalisis pemanfaatan gelombang elektromagnetik dalam kehidupan sehari-hari.</li>
+                    </ul>
+                </div>
+                
+                <div class="kesimpulan-box">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <p>Gelombang Elektromagnetik ada di sekitar kita dan sangat bermanfaat dalam kehidupan!</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>
